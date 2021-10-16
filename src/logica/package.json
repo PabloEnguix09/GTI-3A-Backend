@@ -1,0 +1,19 @@
+{
+    "name": "logica",
+    "version": "0.0.1",
+    "description": "",
+    "main": "Logica.js",
+    "author": "Pablo Enguix Llopis",
+    "scripts": {
+      "test": "node ./node_modules/mocha/bin/mocha",
+      "ayuda": "echo ejecuta esto: npm test"
+    },
+    "dependencies": {
+        "mysql2": "2.3.0",
+        "sequelize": "6.7.0"
+    },
+    "devDependencies": {
+        "mocha": "9.1.2",
+        "request": "2.88.2"
+    }
+}
