@@ -43,6 +43,32 @@ return this.laConexion.define("Medicion", {
         type: DataTypes.FLOAT,
         allowNull:false
     }
-})
+});
+    }
+
+    async insertarMedicion(Medicion, body) {
+        await Medicion.create(body);
+    }
+
+    async obtenerTodasLasMediciones(Medicion) {
+        const mediciones = await Medicion.findAll();
+        return mediciones;
+    }
+
+    async obtenerUltimasMediciones(Medicion, numeroDeUltimasMediciones) {
+        const mediciones = await Medicion.findAll({
+            order:[["fecha","DESC"]],
+            limit: numeroDeUltimasMediciones
+        });
+        return mediciones;
+    }
+
+    async testConexion() {
+        try {
+            await this.laConexion.authenticate();
+            console.log("Conexión establecida");
+        } catch (error) {
+            console.error("No se puede conectar con la base de datos: ", error);
+        }
     }
 }
