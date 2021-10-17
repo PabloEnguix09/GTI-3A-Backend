@@ -1,23 +1,23 @@
 const common = require("mocha/lib/interfaces/common");
 
-module.exports.cargar = function (servidor, laLogica, Medicion) {
+module.exports.cargar = function (servidor, logica, Medicion) {
 
-    servidor.get("/prueba", function (peticion, res) {
+    servidor.get("/test", function (peticion, res) {
 
-        console.log("GET prueba");
+        console.log("GET test");
     
         res.send("Parece que funciona");
     
     });
     
-    servidor.post("/medicion", async function (peticion, res) {
+    servidor.post("/postMedicion", async function (peticion, res) {
     
         console.log("POST medicion")
     
         const data = peticion.body;
     
         try {
-            await laLogica.insertarMedicion(Medicion, data);
+            await logica.insertarMedicion(Medicion, data);
             res.sendStatus(201);
         } catch {
             res.sendStatus(400);
@@ -25,11 +25,11 @@ module.exports.cargar = function (servidor, laLogica, Medicion) {
     
     });
     
-    servidor.get("/obtenerTodasLasMediciones", async function (peticion, res) {
+    servidor.get("/getTodasMediciones", async function (peticion, res) {
     
         console.log("GET obtenerTodasLasMediciones")
     
-        const mediciones = await laLogica.obtenerTodasLasMediciones(Medicion);
+        const mediciones = await logica.obtenerTodasLasMediciones(Medicion);
         if (mediciones.length > 0) {
             res.send(mediciones);
         } else {
@@ -37,7 +37,7 @@ module.exports.cargar = function (servidor, laLogica, Medicion) {
         }
     });
     
-    servidor.get("/obtenerUltimasMediciones/:cuantas", async function (peticion, res) {
+    servidor.get("/getUltimasMediciones/:cuantas", async function (peticion, res) {
     
         console.log("GET obtenerUltimasMediciones")
     
@@ -45,13 +45,12 @@ module.exports.cargar = function (servidor, laLogica, Medicion) {
         
         numeroDeMediciones = parseInt(peticion.params.cuantas, 10);
         
-        const mediciones = await laLogica.obtenerUltimasMediciones(Medicion,numeroDeMediciones);
+        const mediciones = await logica.obtenerUltimasMediciones(Medicion,numeroDeMediciones);
     
         if (mediciones.length > 0) {
             res.send(mediciones).status(200);
         } else {
             res.sendStatus(404);
         }
-    
     });
 }

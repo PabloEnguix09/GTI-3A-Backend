@@ -11,10 +11,10 @@
     },
     "author": "Pablo Enguix Llopis",
     "dependencies": {
-        "express": "4.17.1",
-        "dotenv": "10.0.0"
+        "express": "*",
+        "dotenv": "*"
     },
     "devDependencies": {
-        "mocha": "9.1.2" 
+        "mocha": "*"
     }
 }

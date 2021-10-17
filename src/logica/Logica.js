@@ -4,11 +4,13 @@ const { OP } = require("sequelize");
 
 module.exports = class Logica {
 
-    constructor(base, user, host, port, dialect) {
-        this.laConexion = new Sequelize(base, user, "", {
+    constructor(base, usuario, host, puerto, dialecto) {
+
+        
+        this.laConexion = new Sequelize(base, usuario, null, {
             host: host,
-            port: port,
-            dialect: dialect,
+            port: puerto,
+            dialect: dialecto
         });
     }
 

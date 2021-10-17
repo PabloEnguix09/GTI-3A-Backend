@@ -3,22 +3,19 @@ const Logica = require("../logica/Logica.js");
 require("dotenv").config;
 
 function cargarLogica(base, usuario, host, puerto, dialecto) {
-    return new Logica(base, usuario, "", host, puerto, dialecto);
+    return new Logica(base, usuario, host, puerto, dialecto);
 }
 
 async function main() {
-    let logica = cargarLogica(
-        process.env.BASE,
-        process.env.BASE_USER,
-        process.env.BASE_HOST,
-        process.env.BASE_PORT,
-        process.env.BASE_DIALECT
-    );
-    let Medicion = laLogica.cargarModelos();
+    let logica = cargarLogica("gti3a_sprint0", "root", "localhost", 3306, "mysql");
+    let Medicion = logica.cargarModeloMedicion();
     let servidorExpress = express();
     let reglas = require("./ReglasREST.js");
-    let servicio = servidorExpress.listen(process.env.PORT, function () {
-        console.log(`Servidor REST conectado Puerto ${process.env.PORT}`);
+
+    reglas.cargar(servidorExpress, logica, Medicion);
+
+    let servicio = servidorExpress.listen(8080, function () {
+        console.log("Servidor REST conectado en el puerto 8080");
     });
 
     servidorExpress.use(express.json());
