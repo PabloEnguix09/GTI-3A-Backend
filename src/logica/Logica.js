@@ -30,7 +30,7 @@ return this.laConexion.define("Medicion", {
         allowNull:false
     },
     fecha: {
-        type: 'DATETIME',
+        type: 'TIMESTAMP',
         allowNull: false
     },
     posicionLat: {
@@ -44,7 +44,10 @@ return this.laConexion.define("Medicion", {
     dato: {
         type: DataTypes.FLOAT,
         allowNull:false
-    }
+    },
+}, {
+    timestamps: false,
+    freezeTableName: true
 });
     }
 

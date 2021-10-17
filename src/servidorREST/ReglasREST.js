@@ -13,8 +13,8 @@ module.exports.cargar = function (servidor, logica, Medicion) {
     servidor.post("/postMedicion", async function (peticion, res) {
     
         console.log("POST medicion")
-    
         const data = peticion.body;
+        console.log("peticion=", peticion);
     
         try {
             await logica.insertarMedicion(Medicion, data);
@@ -36,6 +36,11 @@ module.exports.cargar = function (servidor, logica, Medicion) {
             res.sendStatus(404);
         }
     });
+
+    servidor.post("/prueba", async function(peticion, res) {
+        console.log(peticion.body);
+        res.sendStatus(200);
+    })
     
     servidor.get("/getUltimasMediciones/:cuantas", async function (peticion, res) {
     
@@ -53,4 +58,5 @@ module.exports.cargar = function (servidor, logica, Medicion) {
             res.sendStatus(404);
         }
     });
+    
 }
