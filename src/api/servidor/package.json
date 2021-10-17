@@ -1,6 +1,6 @@
 {
     "name": "gti3a-backend",
-    "version": "0.1",
+    "version": "0.0.1",
     "description": "Proyecto individual GTI 3A. Parte del backend",
     "main": "servidor.js",
     "directories": {

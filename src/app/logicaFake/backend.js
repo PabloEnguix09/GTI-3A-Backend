@@ -24,6 +24,7 @@ function getUltimasMediciones(cuantas, cb) {
 }
 
 function botonTodasMediciones_Click() {
+    console.log("getTodasMediciones");
     
     getTodasMediciones(function (res) {
         mostrarMediciones(res);
@@ -34,6 +35,8 @@ function botonUltimasMediciones_Click() {
 
     if(document.getElementById("cuantasMediciones").value != null) {
         let cuantas = document.getElementById("cuantasMediciones").value;
+
+    console.log("getUltimasMediciones/:", cuantas);
 
         getUltimasMediciones(cuantas,function (res) {
             mostrarMediciones(res);

@@ -14,7 +14,6 @@ module.exports.cargar = function (servidor, logica, Medicion) {
     
         console.log("POST medicion");
         const data = peticion.body;
-        console.log("peticion=", peticion);
     
         try {
             await logica.postMedicion(Medicion, data);

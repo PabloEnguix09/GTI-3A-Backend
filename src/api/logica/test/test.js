@@ -18,8 +18,8 @@ describe("Test 1, probando GET y POST", function () {
             assert.equal(err, null, "¿Ha fallado algo?");
             assert.equal(res.statusCode, 200, "¿El código no es 200 (OK)");
             let cargaJSON = JSON.parse(carga);
-            assert.equal(new Date(cargaJSON[0].fecha).toString(), "Sun Oct 17 2021 18:06:41 GMT+0200 (hora de verano de Europa central)", "¿La primera fecha no es correcta?");
-            assert.equal(new Date(cargaJSON[1].fecha).toString(), "Sun Oct 17 2021 18:08:01 GMT+0200 (hora de verano de Europa central)", "¿La segunda fecha no es correcta?");
+            assert.equal(new Date(cargaJSON[0].fecha).toString(), "Sun Oct 17 2021 19:14:18 GMT+0200 (hora de verano de Europa central)", "¿La primera fecha no es correcta?");
+            assert.equal(new Date(cargaJSON[1].fecha).toString(), "Mon Sep 07 2020 11:30:00 GMT+0200 (hora de verano de Europa central)", "¿La segunda fecha no es correcta?");
 
             hecho();
         });
@@ -31,7 +31,7 @@ describe("Test 1, probando GET y POST", function () {
             assert.equal(res.statusCode, 200, "¿El código no es 200 (OK)");
             
             let cargaJSON = JSON.parse(carga);
-            assert.equal(new Date(cargaJSON[0].fecha).toString(), "Sun Oct 17 2021 18:08:01 GMT+0200 (hora de verano de Europa central)", "¿La fecha más reciente no es correcta?");
+            assert.equal(new Date(cargaJSON[0].fecha).toString(), "Sun Oct 17 2021 19:15:35 GMT+0200 (hora de verano de Europa central)", "¿La fecha más reciente no es correcta?");
 
             hecho();
         });

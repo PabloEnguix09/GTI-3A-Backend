@@ -9,7 +9,7 @@ async function main() {
     let logica = cargarLogica("gti3a_sprint0", "root", "localhost", 3306, "mysql");
     let medicion = logica.cargarModeloMedicion();
     let servidorExpress = express();
-    let reglas = require("./ReglasREST.js");
+    let reglas = require("./reglas.js");
 
     let servicio = servidorExpress.listen(8080, function () {
         console.log("Servidor REST conectado en el puerto 8080");
