@@ -1,3 +1,12 @@
+/**
+ * 
+ * NOMBRE: test.js
+ * AUTOR: Pablo Enguix Llopis
+ * FECHA: 16/10/2021
+ * DESCRIPCIÓN: Este fichero se encarga de probar que el backend funciona
+ * 
+ */
+
 const PUERTO_IP = "http://localhost:8080";
 var request = require ("request");
 var assert = require ("assert");

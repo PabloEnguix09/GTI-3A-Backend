@@ -1,3 +1,12 @@
+/**
+ * 
+ * NOMBRE: reglas.js
+ * AUTOR: Pablo Enguix Llopis
+ * FECHA: 16/10/2021
+ * DESCRIPCIÓN: Este fichero se encarga de contactar con la base de datos y hacer las peticiones REST
+ * 
+ */
+
 const common = require("mocha/lib/interfaces/common");
 
 module.exports.cargar = function (servidor, logica, Medicion) {

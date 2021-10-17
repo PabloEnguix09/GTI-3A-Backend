@@ -1,6 +1,26 @@
+/**
+ * 
+ * NOMBRE: servidor.js
+ * AUTOR: Pablo Enguix Llopis
+ * FECHA: 16/10/2021
+ * DESCRIPCIÓN: Este fichero contiene las características del servidor REST
+ * 
+ */
+
 const express = require("express");
 const Logica = require("../logica/logica.js");
 
+/**
+ * 
+ * Esta función se encarga de crear un objeto Logica
+ * 
+ * @param {*} base El nombre de la base de datos
+ * @param {*} usuario El nombre de usuario para entrar en la base de datos
+ * @param {*} host El host de la base de datos
+ * @param {*} puerto El puerto al que tiene que escuchar
+ * @param {*} dialecto El tipo de tecnología que se usa
+ * @returns 
+ */
 function cargarLogica(base, usuario, host, puerto, dialecto) {
     return new Logica(base, usuario, host, puerto, dialecto);
 }

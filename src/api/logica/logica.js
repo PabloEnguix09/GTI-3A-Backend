@@ -1,3 +1,12 @@
+/**
+ * 
+ * NOMBRE: logica.js
+ * AUTOR: Pablo Enguix Llopis
+ * FECHA: 16/10/2021
+ * DESCRIPCIÓN: Este fichero se encarga de recoger y subir datos (lógica verdadera)
+ * 
+ */
+
 const sequelize = require("sequelize");
 const { DataTypes, Sequelize } = require("sequelize");
 const { OP } = require("sequelize");
@@ -59,7 +68,11 @@ cargarModeloMedicion() {
         const mediciones = await Medicion.findAll();
         return mediciones;
     }
-
+    /**
+     * 
+     * Esta función se encarga de recoger las últimas mediciones (según su fecha) en un número determinado (:cuantas) y mostrarlas de más reciente a más antigua
+     * 
+     */
     async getUltimasMediciones(Medicion, cuantas) {
         const mediciones = await Medicion.findAll({
             order:[["fecha","DESC"]],

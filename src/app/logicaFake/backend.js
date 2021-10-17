@@ -1,3 +1,12 @@
+/**
+ * 
+ * NOMBRE: backend.js
+ * AUTOR: Pablo Enguix Llopis
+ * FECHA: 16/10/2021
+ * DESCRIPCIÓN: Este fichero se encarga de pedir al servidor datos y mostrarlos en la web (lógica fake)
+ * 
+ */
+
 const PUERTO_IP = "http://localhost:8080";
 
 function getTodasMediciones(cb) {
