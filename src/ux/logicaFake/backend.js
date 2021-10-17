@@ -25,7 +25,6 @@ function obtenerUltimasMediciones(cuantas, cb) {
 
 function botonTodasMediciones_Click() {
     
-
     obtenerTodasLasMediciones(function (res) {
         mostrarMediciones(res);
     });

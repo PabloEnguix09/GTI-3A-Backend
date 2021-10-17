@@ -1,12 +1,16 @@
 const express = require("express");
+const Logica = require("../logica/Logica.js");
 require("dotenv").config;
-const logica = require("../logica/Logica.js");
+
+function cargarLogica(base, usuario, host, puerto, dialecto) {
+    return new Logica(base, usuario, "", host, puerto, dialecto);
+}
 
 async function main() {
     let logica = cargarLogica(
         process.env.BASE,
-        process.env.BASE_HOST,
         process.env.BASE_USER,
+        process.env.BASE_HOST,
         process.env.BASE_PORT,
         process.env.BASE_DIALECT
     );
