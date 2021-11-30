@@ -12,6 +12,8 @@ const Logica = require("../logica/logica.js");
 
 /**
  * 
+ * nombreBase, usuario, host, puerto, dialecto -> cargarLogica() 
+ * 
  * Esta función se encarga de crear un objeto Logica
  * 
  * @param {*} base El nombre de la base de datos

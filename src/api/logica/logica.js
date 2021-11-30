@@ -64,11 +64,20 @@ cargarModeloMedicion() {
         await Medicion.create(body);
     }
 
+    /**
+     * 
+     * diseño logico: getTodasMediciones() -> [Medicion]
+     * 
+     * Esta función se encarga de recoger todas las mediciones
+     * 
+     */
     async getTodasMediciones(Medicion) {
         const mediciones = await Medicion.findAll();
         return mediciones;
     }
     /**
+     * 
+     * diseño logico: cuantas -> getUltimasMediciones() -> [Medicion]
      * 
      * Esta función se encarga de recoger las últimas mediciones (según su fecha) en un número determinado (:cuantas) y mostrarlas de más reciente a más antigua
      * 

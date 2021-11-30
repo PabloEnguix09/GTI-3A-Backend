@@ -8,7 +8,11 @@
  */
 
 const PUERTO_IP = "http://localhost:8080";
-
+/**
+ * 
+ * Llama a la lógica verdadera para recoger todas las mediciones
+ *  
+ */
 function getTodasMediciones(cb) {
 
     fetch(PUERTO_IP + "/getTodasMediciones", {
@@ -20,7 +24,12 @@ function getTodasMediciones(cb) {
         cb(resJSON);
     });
 }
-
+/**
+ * 
+ * Llama a la lógica verdadera para recoger las últimas mediciones
+ *  
+ * @param cuantas: El número de mediciones
+ */
 function getUltimasMediciones(cuantas, cb) {
     fetch(PUERTO_IP + "/getUltimasMediciones/" + cuantas, {
         method: "GET",
@@ -52,7 +61,12 @@ function botonUltimasMediciones_Click() {
         });
     }
 }
-
+/**
+ * 
+ * Escribe las mediciones en el HTML
+ * 
+ * @param {*} res: La lista de mediciones que muestra 
+ */
 function mostrarMediciones(res) {
     let listaMediciones = document.getElementById("listaMediciones");
     listaMediciones.innerHTML = "";
